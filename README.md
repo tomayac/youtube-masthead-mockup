@@ -15,6 +15,10 @@ A Web Component for the creation of YouTube masthead mockups.
     ></youtube-masthead-mockup>
 ```
 
+Be sure to check out the (documentation)[http://tomayac.github.io/youtube-masthead-mockup/components/youtube-masthead-mockup/]
+and the (live demo)[http://tomayac.github.io/youtube-masthead-mockup/components/youtube-masthead-mockup/demo/] of the Web Component.
+
+
 ## Dependencies
 
 Element dependencies are managed via [Bower](http://bower.io/). You can
