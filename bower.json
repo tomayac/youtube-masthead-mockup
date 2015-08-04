@@ -12,7 +12,7 @@
     "seed"
   ],
   "main": "youtube-masthead-mockup.html",
-  "license": "http://polymer.github.io/LICENSE.txt",
+  "license": "Apache 2.0",
   "homepage": "https://github.com/tomayac/youtube-masthead-mockup/",
   "ignore": [
     "/.*",
