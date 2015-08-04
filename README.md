@@ -15,8 +15,8 @@ A Web Component for the creation of YouTube masthead mockups.
     ></youtube-masthead-mockup>
 ```
 
-Be sure to check out the (documentation)[http://tomayac.github.io/youtube-masthead-mockup/components/youtube-masthead-mockup/]
-and the (live demo)[http://tomayac.github.io/youtube-masthead-mockup/components/youtube-masthead-mockup/demo/] of the Web Component.
+Be sure to check out the [documentation](http://tomayac.github.io/youtube-masthead-mockup/components/youtube-masthead-mockup/)
+and a [live demo](http://tomayac.github.io/youtube-masthead-mockup/components/youtube-masthead-mockup/demo/) of the Web Component.
 
 
 ## Dependencies
