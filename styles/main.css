@@ -1,0 +1,45 @@
+body {
+  font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: lightblue;
+}
+
+.mockup-container {
+  position: relative;
+}
+
+.device-mockup {
+  position: relative;
+}
+
+.youtube-overlay {
+  position: absolute;
+  z-index: -1;
+}
+
+.masthead-headline {
+  position: absolute;
+}
+
+.masthead-description {
+  position: absolute;
+}
+
+.masthead-click-to-action {
+  position: absolute;
+}
+
+.masthead-channel-logo {
+  position: absolute;
+}
+
+.masthead-channel-name {
+  position: absolute;
+}
+
+.masthead-video-poster {
+  position: absolute;
+}
+
+.masthead-video-duration {
+  position: absolute;
+}

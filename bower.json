@@ -1,0 +1,29 @@
+{
+  "name": "youtube-masthead-mockup",
+  "version": "1.0.0",
+  "authors": [
+    "Thomas Steiner <tomac@google.com>"
+  ],
+  "description": "A Web Component for the creation of YouTube masthead mockups.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "seed"
+  ],
+  "main": "youtube-masthead-mockup.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/tomayac/youtube-masthead-mockup/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}
