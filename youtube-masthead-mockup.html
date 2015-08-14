@@ -29,16 +29,16 @@ Example:
 -->
 <dom-module id="youtube-masthead-mockup">
 
-  <style>
-    :host {
-      display: block;
-      box-sizing: border-box;
-    }
-  </style>
-
-  <link rel="stylesheet" href="./styles/main.css">
-
   <template>
+
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="./styles/main.css">
+
     <template id="iphone-site" is="dom-if" if="[[_showIphoneSite]]">
       <link rel="stylesheet" href="./styles/iphone6.css">
       <div class="mockup-container mockup-container-site-iphone6">
