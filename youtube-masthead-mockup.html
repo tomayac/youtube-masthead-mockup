@@ -22,6 +22,7 @@ Example:
         description="Apple Music - History of Sound"
         call-to-action="Test now"
         api-key="api-key-123"
+        rich-media-src="https://partner.googleadservices.com/abc"
     ></youtube-masthead-mockup>
 
 
@@ -157,6 +158,18 @@ Example:
         </div>
       </div>
     </template>
+
+    <template id="desktop-rich-media" is="dom-if" if="[[_showDesktopRichMedia]]">
+      <link rel="stylesheet" href="./styles/desktop.css">
+      <div class="mockup-container mockup-container-rich-media-desktop">
+        <div class="device-mockup"><img src="./assets/desktopmockup.png"></div>
+        <div class="youtube-overlay youtube-overlay-rich-media-desktop"><img src="./assets/desktopyoutube.png"></div>
+        <div class="masthead-rich-media-desktop-container">
+          <iframe src$="[[richMediaSrc]]" allowtransparency="true" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" style="width: 970px; height: 250px;"></iframe>
+        </div>
+      </div>
+    </template>
+
   </template>
 </dom-module>
 
@@ -208,6 +221,12 @@ Example:
       callToAction: String,
 
       /**
+       * The rich media source of the masthead.
+       * @public
+       */
+      richMediaSrc: String,
+
+      /**
        * The YouTube API key. You need a browser key, as outlined at
        * https://developers.google.com/youtube/registering_an_application#Create_API_Keys.
        * @public
@@ -226,6 +245,8 @@ Example:
       _showDesktopFullbleed: {type: Boolean, value: false},
       /** @private */
       _showDesktopCentered: {type: Boolean, value: false},
+      /** @private */
+      _showDesktopRichMedia: {type: Boolean, value: false},
 
       /** @private */
       _channelName: String,
@@ -272,6 +293,9 @@ Example:
 
       var that = this;
       var channelId;
+      if (!this.videoId) {
+        return this._determineMasthead(that.device, that.type);
+      }
       this._getVideoInfo(this.videoId).then(function(videoInfo) {
         var video = videoInfo.items[0];
         that._channelName = video.snippet.channelTitle;
@@ -303,6 +327,9 @@ Example:
         return this._showDesktopFullbleed = true;
       } else if (device === 'desktop' && type === 'centered') {
         return this._showDesktopCentered = true;
+      } else if ((device === 'desktop') &&
+                 (type.replace(/-/g, '') === 'richmedia')) {
+        return this._showDesktopRichMedia = true;
       }
     },
 

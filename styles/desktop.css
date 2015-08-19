@@ -96,3 +96,18 @@
   width: 18px;
   height: auto;
 }
+
+/* Desktop rich media */
+.mockup-container-rich-media-desktop {
+  width: 984px;
+}
+.youtube-overlay-rich-media-desktop {
+  top: 40px;
+  left: 36px;
+}
+.masthead-rich-media-desktop-container {
+  position: absolute;
+  transform: scale(.5);
+  top: 65px;
+  left: 50px;
+}
