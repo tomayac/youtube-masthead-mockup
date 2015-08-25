@@ -1,0 +1,113 @@
+/* Desktop full-bleed */
+.mockup-container-fullbleed-desktop {
+  width: 964px;
+}
+.youtube-overlay-fullbleed-desktop {
+  top: 40px;
+  left: 36px;
+}
+.masthead-headline-fullbleed-desktop {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  top: 136px;
+  left: 325px;
+}
+.masthead-channel-logo-fullbleed-desktop {
+  top: 135px;
+  left: 300px;
+}
+.masthead-channel-logo-fullbleed-desktop img {
+  width: 20px;
+  height: 20px;
+}
+.masthead-video-poster-fullbleed-desktop {
+  width: 484px;
+  height: 124px;
+  top: 128px;
+  left: 293px;
+  background-size: cover;
+  background-position: center;
+}
+.masthead-channel-muted-fullbleed-desktop {
+  position: absolute;
+  top: 232px;
+  left: 298px;
+}
+.masthead-channel-muted-fullbleed-desktop img {
+  width: 18px;
+  height: auto;
+}
+
+/* Desktop centered */
+.mockup-container-centered-desktop {
+  width: 984px;
+}
+.youtube-overlay-centered-desktop {
+  top: 40px;
+  left: 36px;
+}
+.masthead-headline-centered-desktop {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  top: 136px;
+  left: 325px;
+  width: 125px;
+}
+.masthead-channel-logo-centered-desktop {
+  top: 135px;
+  left: 300px;
+}
+.masthead-channel-logo-centered-desktop img {
+  width: 20px;
+  height: 20px;
+}
+.masthead-video-poster-background-centered-desktop {
+  width: 484px;
+  height: 124px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+.masthead-video-poster-background-centered-desktop-container {
+  width: 484px;
+  height: 124px;
+  top: 128px;
+  left: 293px;
+  overflow: hidden;
+}
+.masthead-video-poster-centered-desktop {
+  width: 484px;
+  height: 124px;
+  top: 128px;
+  left: 293px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.masthead-channel-muted-centered-desktop {
+  position: absolute;
+  top: 232px;
+  left: 458px;
+}
+.masthead-channel-muted-centered-desktop img {
+  width: 18px;
+  height: auto;
+}
+
+/* Desktop rich media */
+.mockup-container-rich-media-desktop {
+  width: 984px;
+}
+.youtube-overlay-rich-media-desktop {
+  top: 40px;
+  left: 36px;
+}
+.masthead-rich-media-desktop-container {
+  position: absolute;
+  transform: scale(.5);
+  top: 65px;
+  left: 50px;
+}

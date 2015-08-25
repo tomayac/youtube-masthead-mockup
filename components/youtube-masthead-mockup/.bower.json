@@ -1,0 +1,43 @@
+{
+  "name": "youtube-masthead-mockup",
+  "authors": [
+    "Thomas Steiner <tomac@google.com>"
+  ],
+  "description": "A Web Component for the creation of YouTube masthead mockups.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "seed"
+  ],
+  "main": "youtube-masthead-mockup.html",
+  "license": "Apache 2.0",
+  "homepage": "https://github.com/tomayac/youtube-masthead-mockup/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~1.1.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  },
+  "_release": "4dd00292c0",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4dd00292c09f538f50d4a9ecbf61cf0cdc47a9ea"
+  },
+  "_source": "git://github.com/tomayac/youtube-masthead-mockup.git",
+  "_target": "master",
+  "_originalSource": "tomayac/youtube-masthead-mockup",
+  "_direct": true
+}

@@ -1,0 +1,137 @@
+/* Nexus 5 site */
+.mockup-container-site-nexus5 {
+  width: 468px;
+}
+.header-overlay-site-nexus5 {
+  top: 75px;
+  left: 21px;
+}
+.header-overlay-site-nexus5 img {
+  width: 424px;
+}
+.youtube-overlay-site-nexus5 {
+  top: 169px;
+  left: 21px;
+}
+.youtube-overlay-site-nexus5 img {
+  width: 424px;
+}
+.masthead-headline-site-nexus5 {
+  color: #222;
+  font-size: 16px;
+  top: 320px;
+  left: 195px;
+}
+.masthead-description-site-nexus5 {
+  color: #777;
+  font-size: 12px;
+  top: 346px;
+  left: 233px;
+}
+.masthead-click-to-action-site-nexus5 {
+  color: #2793e6;
+  font-size: 12px;
+  top: 255px;
+  right: 50px;
+}
+.masthead-channel-logo-site-nexus5 {
+  top: 250px;
+  left: 45px;
+}
+.masthead-channel-logo-site-nexus5 img {
+  width: 28px;
+  height: 28px;
+}
+.masthead-channel-name-site-nexus5 {
+  color: #333;
+  font-size: 12px;
+  top: 257px;
+  left: 80px;
+}
+.masthead-video-poster-site-nexus5 {
+  top: 302px;
+  left: 47px;
+  width: 140px;
+  height: 80px;
+  background-position: center;
+  background-size: cover;
+}
+.masthead-video-duration-site-nexus5 {
+  border-radius: 2px;
+  right: 5px;
+  bottom: 5px;
+  background: rgba(0,0,0,.6);
+  color: #fff;
+  padding: 1px 4px;
+  font-size: 8px;
+}
+
+/* Nexus 5 app */
+.mockup-container-app-nexus5 {
+  width: 468px;
+}
+.header-overlay-app-nexus5 {
+  top: 75px;
+  left: 21px;
+}
+.header-overlay-app-nexus5 img {
+  width: 424px;
+}
+.youtube-overlay-app-nexus5 {
+  top: 75px;
+  left: 21px;
+}
+.youtube-overlay-app-nexus5 img {
+  width: 424px;
+}
+.masthead-headline-app-nexus5 {
+  color: #222;
+  font-size: 16px;
+  top: 476px;
+  left: 40px;
+}
+.masthead-description-app-nexus5 {
+  color: #777;
+  font-size: 14px;
+  top: 506px;
+  left: 80px;
+}
+.masthead-click-to-action-app-nexus5 {
+  color: #2793e6;
+  font-size: 14px;
+  top: 195px;
+  right: 40px;
+}
+.masthead-channel-logo-app-nexus5 {
+  top: 182px;
+  left: 36px;
+}
+.masthead-channel-logo-app-nexus5 img {
+  width: 42px;
+  height: 42px;
+}
+.masthead-channel-name-app-nexus5 {
+  color: #333;
+  font-size: 16px;
+  top: 192px;
+  left: 98px;
+}
+.masthead-video-poster-app-nexus5 {
+  top: 235px;
+  left: 37px;
+  width: 393px;
+  height: 225px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.masthead-video-duration-app-nexus5 {
+  border-radius: 3px;
+  right: 6px;
+  bottom: 6px;
+  background: rgba(0,0,0,.6);
+  color: #fff;
+  padding: 4px 4px;
+  font-size: 11px;
+  border: solid 1px #777;
+}

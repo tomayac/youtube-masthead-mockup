@@ -1,0 +1,404 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A Web Component for the creation of YouTube masthead mockups.
+
+Example:
+
+    <youtube-masthead-mockup
+        device="iphone"
+        type="app"
+        video-id="BNUC6UQ_Qvg"
+        headline="Apple Music - Worldwide"
+        description="Apple Music - History of Sound"
+        call-to-action="Test now"
+        api-key="api-key-123"
+        rich-media-src="https://partner.googleadservices.com/abc"
+    ></youtube-masthead-mockup>
+
+
+@demo
+-->
+<dom-module id="youtube-masthead-mockup">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="./styles/main.css">
+
+    <template id="iphone-site" is="dom-if" if="[[_showIphoneSite]]">
+      <link rel="stylesheet" href="./styles/iphone6.css">
+      <div class="mockup-container mockup-container-site-iphone6">
+        <div class="device-mockup"><img src="./assets/iphone6mockup.png"></div>
+        <div class="youtube-overlay header-overlay-site-iphone6"><img src="./assets/iphone6header.png"></div>
+        <div class="youtube-overlay youtube-overlay-site-iphone6"><img src="./assets/iphone6youtube.png"></div>
+        <div class="masthead-headline masthead-headline-site-iphone6">[[headline]]</div>
+        <div class="masthead-description masthead-description-site-iphone6">[[description]]</div>
+        <div class="masthead-click-to-action masthead-click-to-action-site-iphone6">[[callToAction]]</div>
+        <div class="masthead-channel-logo masthead-channel-logo-site-iphone6">
+          <img src$="[[_channelLogo]]">
+        </div>
+        <div class="masthead-channel-name masthead-channel-name-site-iphone6">[[_channelName]]</div>
+        <div style$="[[_poster]]"
+            class="masthead-video-poster masthead-video-poster-site-iphone6">
+          <div class="masthead-video-duration masthead-video-duration-site-iphone6">[[_duration]]</div>
+        </div>
+      </div>
+    </template>
+
+    <template id="iphone-app" is="dom-if" if="[[_showIphoneApp]]">
+      <link rel="stylesheet" href="./styles/iphone6.css">
+      <div class="mockup-container mockup-container-app-iphone6">
+        <div class="device-mockup"><img src="./assets/iphone6mockup.png"></div>
+        <div class="youtube-overlay youtube-overlay-app-iphone6"><img src="./assets/iphone6app.png"></div>
+        <div class="masthead-headline masthead-headline-app-iphone6">[[headline]]</div>
+        <div class="masthead-description masthead-description-app-iphone6">[[description]]</div>
+        <div class="masthead-click-to-action masthead-click-to-action-app-iphone6">[[callToAction]]</div>
+        <div class="masthead-channel-logo masthead-channel-logo-app-iphone6">
+          <img src$="[[_channelLogo]]">
+        </div>
+        <div class="masthead-channel-name masthead-channel-name-app-iphone6">[[_channelName]]</div>
+        <div style$="[[_poster]]"
+            class="masthead-video-poster masthead-video-poster-app-iphone6">
+          <div class="masthead-video-duration masthead-video-duration-app-iphone6">[[_duration]]</div>
+        </div>
+      </div>
+    </template>
+
+    <template id="android-site" is="dom-if" if="[[_showAndroidSite]]">
+      <link rel="stylesheet" href="./styles/nexus5.css">
+      <div class="mockup-container mockup-container-site-nexus5">
+        <div class="device-mockup"><img src="./assets/nexus5mockup.png"></div>
+        <div class="youtube-overlay header-overlay-site-nexus5"><img src="./assets/nexus5header.png"></div>
+        <div class="youtube-overlay youtube-overlay-site-nexus5"><img src="./assets/nexus5youtube.png"></div>
+        <div class="masthead-headline masthead-headline-site-nexus5">[[headline]]</div>
+        <div class="masthead-description masthead-description-site-nexus5">[[description]]</div>
+        <div class="masthead-click-to-action masthead-click-to-action-site-nexus5">[[callToAction]]</div>
+        <div class="masthead-channel-logo masthead-channel-logo-site-nexus5">
+          <img src$="[[_channelLogo]]">
+        </div>
+        <div class="masthead-channel-name masthead-channel-name-site-nexus5">[[_channelName]]</div>
+        <div style$="[[_poster]]"
+            class="masthead-video-poster masthead-video-poster-site-nexus5">
+          <div class="masthead-video-duration masthead-video-duration-site-nexus5">[[_duration]]</div>
+        </div>
+      </div>
+    </template>
+
+    <template id="android-app" is="dom-if" if="[[_showAndroidApp]]">
+      <link rel="stylesheet" href="./styles/nexus5.css">
+      <div class="mockup-container mockup-container-app-nexus5">
+        <div class="device-mockup"><img src="./assets/nexus5mockup.png"></div>
+        <div class="youtube-overlay youtube-overlay-app-nexus5"><img src="./assets/nexus5app.png"></div>
+        <div class="masthead-headline masthead-headline-app-nexus5">[[headline]]</div>
+        <div class="masthead-description masthead-description-app-nexus5">[[description]]</div>
+        <div class="masthead-click-to-action masthead-click-to-action-app-nexus5">[[callToAction]]</div>
+        <div class="masthead-channel-logo masthead-channel-logo-app-nexus5">
+          <img src$="[[_channelLogo]]">
+        </div>
+        <div class="masthead-channel-name masthead-channel-name-app-nexus5">[[_channelName]]</div>
+        <div style$="[[_poster]]"
+            class="masthead-video-poster masthead-video-poster-app-nexus5">
+          <div class="masthead-video-duration masthead-video-duration-app-nexus5">[[_duration]]</div>
+        </div>
+      </div>
+    </template>
+
+    <template id="desktop-fullbleed" is="dom-if" if="[[_showDesktopFullbleed]]">
+      <link rel="stylesheet" href="./styles/desktop.css">
+      <div class="mockup-container mockup-container-fullbleed-desktop">
+        <div class="device-mockup"><img src="./assets/desktopmockup.png"></div>
+        <div class="youtube-overlay youtube-overlay-fullbleed-desktop"><img src="./assets/desktopyoutube.png"></div>
+        <div style$="[[_poster]]"
+            class="masthead-video-poster masthead-video-poster-fullbleed-desktop">
+        </div>
+        <div class="masthead-channel-muted-fullbleed-desktop">
+          <img src="./assets/desktopmuted.png">
+        </div>
+        <div class="masthead-headline masthead-headline-fullbleed-desktop">[[headline]]</div>
+        <div class="masthead-channel-logo masthead-channel-logo-fullbleed-desktop">
+          <img src$="[[_channelLogo]]">
+        </div>
+      </div>
+    </template>
+
+    <template id="desktop-centered" is="dom-if" if="[[_showDesktopCentered]]">
+      <link rel="stylesheet" href="./styles/desktop.css">
+      <div class="mockup-container mockup-container-centered-desktop">
+        <div class="device-mockup"><img src="./assets/desktopmockup.png"></div>
+        <div class="youtube-overlay youtube-overlay-centered-desktop"><img src="./assets/desktopyoutube.png"></div>
+        <div class="masthead-video-poster masthead-video-poster-background-centered-desktop-container">
+          <div style$="[[_poster]]"
+              class="masthead-video-poster masthead-video-poster-background-centered-desktop">
+          </div>
+        </div>
+        <div style$="[[_poster]]"
+            class="masthead-video-poster masthead-video-poster-centered-desktop">
+        </div>
+        <div class="masthead-channel-muted-centered-desktop">
+          <img src="./assets/desktopmuted.png">
+        </div>
+        <div class="masthead-headline masthead-headline-centered-desktop">[[headline]]</div>
+        <div class="masthead-channel-logo masthead-channel-logo-centered-desktop">
+          <img src$="[[_channelLogo]]">
+        </div>
+      </div>
+    </template>
+
+    <template id="desktop-rich-media" is="dom-if" if="[[_showDesktopRichMedia]]">
+      <link rel="stylesheet" href="./styles/desktop.css">
+      <div class="mockup-container mockup-container-rich-media-desktop">
+        <div class="device-mockup"><img src="./assets/desktopmockup.png"></div>
+        <div class="youtube-overlay youtube-overlay-rich-media-desktop"><img src="./assets/desktopyoutube.png"></div>
+        <div class="masthead-rich-media-desktop-container">
+          <iframe src$="[[richMediaSrc]]" allowtransparency="true" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" style="width: 970px; height: 250px;"></iframe>
+        </div>
+      </div>
+    </template>
+
+  </template>
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'youtube-masthead-mockup',
+
+    properties: {
+
+      /**
+       * Determines the device class that the masthead is rendered on. Possible
+       * values are "iphone", "android", and "desktop".
+       * @public
+       */
+      device: String,
+
+      /**
+       * Determines the type of the masthead. Possible values with the device
+       * class "iphone" and "android" are "site" and "app", with the device
+       * class "desktop" the possible values are "fullbleed" and "centered".
+       * @public
+       */
+      type: String,
+
+      /**
+       * The YouTube video ID of the masthead's underlying video.
+       * @public
+       */
+      videoId: String,
+
+      /**
+       * The headline of the masthead.
+       * @public
+       */
+      headline: String,
+
+      /**
+       * The description of the masthead.
+       * @public
+       */
+      description: String,
+
+      /**
+       * The call-to-action of the masthead.
+       * @public
+       */
+      callToAction: String,
+
+      /**
+       * The rich media source of the masthead.
+       * @public
+       */
+      richMediaSrc: String,
+
+      /**
+       * The YouTube API key. You need a browser key, as outlined at
+       * https://developers.google.com/youtube/registering_an_application#Create_API_Keys.
+       * @public
+       */
+      apiKey: String,
+
+      /** @private */
+      _showIphoneSite: {type: Boolean, value: false},
+      /** @private */
+      _showIphoneApp: {type: Boolean, value: false},
+      /** @private */
+      _showAndroidSite: {type: Boolean, value: false},
+      /** @private */
+      _showAndroidApp: {type: Boolean, value: false},
+      /** @private */
+      _showDesktopFullbleed: {type: Boolean, value: false},
+      /** @private */
+      _showDesktopCentered: {type: Boolean, value: false},
+      /** @private */
+      _showDesktopRichMedia: {type: Boolean, value: false},
+
+      /** @private */
+      _channelName: String,
+      /** @private */
+      _channelLogo: String,
+      /** @private */
+      _duration: String,
+      /** @private */
+      _posterSrc: {
+        type: String,
+        value: 'dummy'
+      },
+      /** @private */
+      _poster: {
+        type: String,
+        computed: '_determinePoster(_posterSrc)'
+      }
+    },
+
+    attached: function() {
+
+      var convertFromIso8601 = function(duration) {
+        var pad = function(number) {
+          return (number === 0 ? '' : (number < 10 ? '0' + number : number));
+        };
+        var iso8601regEx = /^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/;
+        var hours = 0;
+        minutes = 0;
+        seconds = 0;
+        var matches = iso8601regEx.exec(duration);
+        if (matches[1]) {
+          hours = matches[1];
+        }
+        if (matches[2]) {
+          minutes = matches[2];
+        }
+        if (matches[3]) {
+          seconds = matches[3];
+        }
+        return (hours ?
+            (pad(hours) + ':' + pad(minutes) + ':' + pad(seconds)) :
+            (minutes + ':' + pad(seconds)));
+      };
+
+      var that = this;
+      var channelId;
+      if (!this.videoId) {
+        return this._determineMasthead(that.device, that.type);
+      }
+      this._getVideoInfo(this.videoId).then(function(videoInfo) {
+        if (videoInfo.pageInfo.totalResults) {
+          // Video is public, use actual data
+          var video = videoInfo.items[0];
+          that._channelName = video.snippet.channelTitle;
+          channelId = video.snippet.channelId;
+          that._duration = convertFromIso8601(video.contentDetails.duration);
+          that._posterSrc = video.snippet.thumbnails.high.url;
+        } else {
+          // Video is private, use default thumbnail
+          that._channelName = '';
+          channelId = '';
+          that._duration = '';
+          that._posterSrc = that.resolveUrl('./assets/default.jpg');
+        }
+      }).then(function() {
+        if (channelId) {
+          return that._getChannelInfo(channelId);
+        } else {
+          return {
+            pageInfo: {
+              totalResults: 0
+            }
+          };
+        }
+      }).then(function(channelInfo) {
+        if (channelInfo.pageInfo.totalResults) {
+          that._channelLogo = channelInfo.items[0].snippet.thumbnails.high.url;
+        } else {
+          that._channelLogo = that.resolveUrl('./assets/meh.png');
+        }
+        that._determineMasthead(that.device, that.type);
+      }).catch(function(err) {
+        throw(err);
+      });
+    },
+
+    _determineMasthead: function(device, type) {
+      device = device.toLowerCase();
+      type = type.toLowerCase();
+      if (device === 'iphone' && type === 'app') {
+        return this._showIphoneApp = true;
+      } else if (device === 'iphone' && type === 'site') {
+        return this._showIphoneSite = true;
+      } else if (device === 'android' && type === 'app') {
+        return this._showAndroidApp = true;
+      } else if (device === 'android' && type === 'site') {
+        return this._showAndroidSite = true;
+      } else if (device === 'desktop' && type === 'fullbleed') {
+        return this._showDesktopFullbleed = true;
+      } else if (device === 'desktop' && type === 'centered') {
+        return this._showDesktopCentered = true;
+      } else if ((device === 'desktop') &&
+                 (type.replace(/-/g, '') === 'richmedia')) {
+        return this._showDesktopRichMedia = true;
+      }
+    },
+
+    _determinePoster: function(posterSrc) {
+      return 'background-image: url(' + posterSrc + ');';
+    },
+
+    _getVideoInfo: function(videoId) {
+      var that = this;
+      return new Promise(function(resolve, reject) {
+        var url =
+            'https://www.googleapis.com/youtube/v3/videos' +
+            '?part=' + encodeURIComponent('snippet,contentDetails') +
+            '&id=' + videoId +
+            '&maxResults=1' +
+            '&key=' + that.apiKey;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onload = function() {
+          return resolve(JSON.parse(xhr.responseText));
+        };
+        xhr.onerror = function() {
+          return reject('Could not get video info.');
+        }
+        xhr.send();
+      });
+    },
+
+    _getChannelInfo: function(channelId) {
+      var that = this;
+      return new Promise(function(resolve, reject) {
+        var url =
+            'https://www.googleapis.com/youtube/v3/channels' +
+            '?part=snippet' +
+            '&id=' + channelId +
+            '&key=' + that.apiKey;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onload = function() {
+          return resolve(JSON.parse(xhr.responseText));
+        };
+        xhr.onerror = function() {
+          return reject('Could not get video info.');
+        }
+        xhr.send();
+      });
+    }
+
+  });
+
+</script>

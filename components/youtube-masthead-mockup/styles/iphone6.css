@@ -1,0 +1,139 @@
+/* iPhone 6 site */
+.mockup-container-site-iphone6 {
+  width: 320px;
+}
+.header-overlay-site-iphone6 {
+  top: 74px;
+  left: 21px;
+}
+.header-overlay-site-iphone6 img {
+  width: 281px;
+}
+.youtube-overlay-site-iphone6 {
+  top: 131px;
+  left: 21px;
+}
+.youtube-overlay-site-iphone6 img {
+  width: 281px;
+}
+.masthead-headline-site-iphone6 {
+  color: #222;
+  font-size: 12px;
+  top: 224px;
+  left: 132px;
+}
+.masthead-description-site-iphone6 {
+  color: #777;
+  font-size: 9px;
+  top: 242px;
+  left: 155px;
+}
+.masthead-click-to-action-site-iphone6 {
+  color: #2793e6;
+  font-size: 11px;
+  top: 184px;
+  right: 35px;
+}
+.masthead-channel-logo-site-iphone6 {
+  top: 177px;
+  left: 36px;
+}
+.masthead-channel-logo-site-iphone6 img {
+  width: 28px;
+  height: 28px;
+}
+.masthead-channel-name-site-iphone6 {
+  color: #333;
+  font-size: 11px;
+  top: 184px;
+  left: 70px;
+}
+.masthead-video-poster-site-iphone6 {
+  top: 216px;
+  left: 37px;
+  width: 88px;
+  height: 50px;
+  background-position: center;
+  background-size: cover;
+}
+.masthead-video-duration-site-iphone6 {
+  border-radius: 2px;
+  right: 3px;
+  bottom: 3px;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  padding: 1px 4px;
+  font-size: 8px;
+}
+
+/* iPhone 6 app */
+.mockup-container-app-iphone6 {
+  width: 320px;
+}
+.header-overlay-app-iphone6 {
+  top: 74px;
+  left: 21px;
+}
+.header-overlay-app-iphone6 img {
+  width: 281px;
+}
+.youtube-overlay-app-iphone6 {
+  top: 75px;
+  left: 21px;
+}
+.youtube-overlay-app-iphone6 img {
+  width: 281px;
+}
+.masthead-headline-app-iphone6 {
+  color: #222;
+  font-size: 14px;
+  top: 270px;
+  left: 82px;
+}
+.masthead-description-app-iphone6 {
+  color: #777;
+  font-size: 10px;
+  top: 289px;
+  left: 82px;
+}
+.masthead-click-to-action-app-iphone6 {
+  color: #2793e6;
+  font-size: 10px;
+  top: 328px;
+  left: 82px;
+  text-transform: uppercase;
+}
+.masthead-channel-logo-app-iphone6 {
+  top: 270px;
+  left: 36px;
+}
+.masthead-channel-logo-app-iphone6 img {
+  width: 32px;
+  height: 32px;
+}
+.masthead-channel-name-app-iphone6 {
+  color: #777;
+  font-size: 10px;
+  top: 306px;
+  left: 106px;
+}
+.masthead-video-poster-app-iphone6 {
+  top: 136px;
+  left: 37px;
+  width: 250px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.masthead-video-duration-app-iphone6 {
+  border-radius: 2px;
+  right: 6px;
+  bottom: 6px;
+  background: rgba(0,0,0,.75);
+  color: #fff;
+  padding: 3px;
+  font-size: 9px;
+  opacity: .6;
+  border: solid .75px #777;
+}
