@@ -309,7 +309,7 @@ Example:
           that._channelName = '';
           channelId = '';
           that._duration = '';
-          that._posterSrc = './assets/default.jpg';
+          that._posterSrc = that.resolveUrl('./assets/default.jpg');
         }
       }).then(function() {
         if (channelId) {
@@ -325,7 +325,7 @@ Example:
         if (channelInfo.pageInfo.totalResults) {
           that._channelLogo = channelInfo.items[0].snippet.thumbnails.high.url;
         } else {
-          that._channelLogo = './assets/meh.png';
+          that._channelLogo = that.resolveUrl('./assets/meh.png');
         }
         that._determineMasthead(that.device, that.type);
       }).catch(function(err) {
