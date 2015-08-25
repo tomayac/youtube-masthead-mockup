@@ -297,15 +297,36 @@ Example:
         return this._determineMasthead(that.device, that.type);
       }
       this._getVideoInfo(this.videoId).then(function(videoInfo) {
-        var video = videoInfo.items[0];
-        that._channelName = video.snippet.channelTitle;
-        channelId = video.snippet.channelId;
-        that._duration = convertFromIso8601(video.contentDetails.duration);
-        that._posterSrc = video.snippet.thumbnails.high.url;
+        if (videoInfo.pageInfo.totalResults) {
+          // Video is public, use actual data
+          var video = videoInfo.items[0];
+          that._channelName = video.snippet.channelTitle;
+          channelId = video.snippet.channelId;
+          that._duration = convertFromIso8601(video.contentDetails.duration);
+          that._posterSrc = video.snippet.thumbnails.high.url;
+        } else {
+          // Video is private, use default thumbnail
+          that._channelName = '';
+          channelId = '';
+          that._duration = '';
+          that._posterSrc = './assets/default.jpg';
+        }
       }).then(function() {
-        return that._getChannelInfo(channelId);
+        if (channelId) {
+          return that._getChannelInfo(channelId);
+        } else {
+          return {
+            pageInfo: {
+              totalResults: 0
+            }
+          };
+        }
       }).then(function(channelInfo) {
-        that._channelLogo = channelInfo.items[0].snippet.thumbnails.high.url;
+        if (channelInfo.pageInfo.totalResults) {
+          that._channelLogo = channelInfo.items[0].snippet.thumbnails.high.url;
+        } else {
+          that._channelLogo = './assets/meh.png';
+        }
         that._determineMasthead(that.device, that.type);
       }).catch(function(err) {
         throw(err);
